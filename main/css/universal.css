@@ -1,0 +1,58 @@
+.icon{
+    height: 100%;
+    width: 100%;
+}
+.absolute{
+    position: absolute;
+}
+.relative{
+    position: relative;
+}
+.flex{
+    display: flex;
+}
+.block{
+    display: block;
+}
+.full-width{
+    width: 100%;
+}
+.full-height{
+    height: 100%;
+}
+.hidden{
+    visibility: hidden;
+}
+.opaque{
+    opacity: 1;
+}
+.transparent{
+    opacity: 0;
+}
+.grey{
+    border: 1px solid grey;
+}
+.red{
+    border: 1px solid red;
+}
+.green{
+    border: 1px solid green;
+} 
+.white{
+    border: 1px solid white;
+}
+.blue{
+    border: 1px solid blue;
+}
+
+.input{
+    display: flex;
+    height: 35px;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background: transparent;
+}
+a{
+    text-decoration: none;
+}

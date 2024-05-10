@@ -1,0 +1,114 @@
+/* written by leevayle@protonmail.com */
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+}
+body {
+    display: block;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+}
+*{transition: ease-in-out 0.1s;}
+.main{
+    width: 30%;
+    min-width: 300px;
+    max-width: 500px;
+    height: 75%;
+    max-height: 500px;
+    padding-top: 100px;
+    display: block;
+    position: relative;
+    margin: auto;
+}
+.main-cont{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+.bottom-graphics{
+    width: 120%;
+    height: 35%;
+    position: absolute;
+    bottom: 0px;
+    left: -10%;
+    margin-left: -5%;
+    overflow: hidden;
+}
+.stack{
+    width: 100%;
+    height: 30%;
+    margin: auto;
+    margin-top: 5px;
+}
+.logo{
+    margin: auto;
+    width: 35%;
+    min-width: 100px;
+    height: auto;
+}
+.graphic{
+    height: 100%;
+    width:120%;
+    overflow: hidden;
+    
+}
+.slogan{
+    font-family: "century gothic",sans-serif;
+    color: #BFBFBF;
+    text-align: center;
+    font-size: normal;
+}
+.info{
+    font-size: small;
+    color: #8d8d8d;
+}
+.loading{
+    width: 90%;
+    margin: auto;
+    opacity: 1;
+}
+.loading-outline{
+    width: 70%;
+    margin: auto;
+    height: 10px;
+    border-radius: 15px;
+    background: transparent;
+    border: 0.5px solid #FF66C4;
+    position: relative;
+}
+.progress{
+    transition: ease-in-out 1s;
+    height: 6px;
+    width: 0%;
+    position: absolute;
+    top:2px;
+    left:2px;
+    border-radius: 10px;
+    background: linear-gradient(to right, 
+    #FF66C4 0%,
+    #38B6FF 78%,
+    #BDD7EE 90%,
+    #FFBD59 100%);
+}
+.main-hidden{
+    display: block;
+    padding-top: 20px;
+    background-color: #000000;
+    position: absolute;
+    top:15%;
+    max-height: 300px;
+    opacity: 0;
+}
+.welcome{
+    width: 30%;
+    left: 35%;
+    top: 50%;
+}
+.company-logo{
+    width: 25%;
+    margin: auto;
+    height: auto;
+    margin-bottom: 30px;
+}
