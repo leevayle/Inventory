@@ -17,25 +17,28 @@
             <div class="main-cont main-hidden opaque" id="main-hidden">
                 
                 <div class="stack relative">
-                    <p class="slogan" style="font-size: xx-large;">Login</p>   
+                    <p class="slogan" id="slogan">Log in</p>   
                     <div class="progress welcome"></div>             
                 </div>
                 <div class="stack relative">
                     <div class="full-width block form">
-                        <form>
+                        <form1  id="form">
                             <div class="relative full-width">
-                                <input type="text" title="Id number" class="input textinput grey">
+                                <input type="text" autocomplete="off" title="Id number" class="input textinput grey" id="id" placeholder="">
                             </div>
                             
-                            <input type="password" title="password" class="input textinput grey">
+                            <input type="password" autocomplete="off" title="password" class="input textinput grey" id="password" placeholder="">
     
                             <p class="slogan" style="font-size: small; color: grey;" title="reset password"><a href="#" style="color: inherit;">Forgot password?</a> </p>
                             
-                            <div class=" flex full width">
-                                <button type="submit" class="grey submit">Submit</button>
+                            <div class=" flex full width relative">
+                                <button type="submit" class="grey submit" id="submit">Submit</button>
+                                <div class="full-width absolute spinner flex transparent" id="spinner">
+                                    <img src="images/icons/gif/spinner.gif" class="full-height m-auto">
+                                </div>
                             </div>
                             
-                        </form>
+                        </form1>
                     </div>
                 </div>
             </div>
