@@ -62,3 +62,6 @@ a{
 .display-n{
     display: none;
 }
+.fixed{
+    position: fixed;
+}
