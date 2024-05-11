@@ -3,15 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Login | leenx inventory v 1.0</title>
     <link rel="icon" href="images/icons/icon.png">
-    <link rel="stylesheet" href="css/universal.css">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/universal.css">
+    <link rel="stylesheet" href="css/notifications.css">
     <link rel="stylesheet" href="css/welcome.css">
     <link rel="stylesheet" href="css/login.css">
 </head>
-<body>
-    <div class="full-width full-height flex">
+<body>    
+
+    <div class="full-width full-height block">
+
+        <section id="notifications" class="relative">
+            <div class="full-width flex notification">
+                <div class="m-auto notification-cont block">
+
+                    <div class="flex m-auto textcont display-n" id="success">
+                        <div class="notiftext flex m-auto" id="successtext">
+                            
+                        </div>
+                        <div class="closebtn flex m-auto" id="closesuccess">
+                            <img src="images/icons/close.svg" class="icon flex m-auto">
+                        </div>
+                    </div>
+
+                    <div class="flex m-auto textcont display-n" id="error">
+                        <div class="notiftext flex m-auto" id="errortext">
+                            
+                        </div>
+                        <div class="closebtn flex m-auto" id="closeerror">
+                            <img src="images/icons/close red.svg" class="icon flex m-auto">
+                        </div>
+                    </div>
+
+                    <div class="flex m-auto textcont display-n" id="info">
+                        <div class="notiftext flex m-auto" id="infotext">
+                            
+                        </div>
+                        <div class="closebtn flex m-auto" id="infoclose">
+                            <img src="images/icons/close blue.svg" class="icon flex m-auto">
+                        </div>
+                    </div>
+
+                    <div class="flex m-auto textcont display-n" id="warning">
+                        <div class="notiftext flex m-auto" id="warningtext">
+                            
+                        </div>
+                        <div class="closebtn flex m-auto" id="closewarning">
+                            <img src="images/icons/close orange.svg" class="icon flex m-auto">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <div class="main login">
                 
             <div class="main-cont main-hidden opaque" id="main-hidden">
@@ -32,7 +79,7 @@
                             <p class="slogan" style="font-size: small; color: grey;" title="reset password"><a href="#" style="color: inherit;">Forgot password?</a> </p>
                             
                             <div class=" flex full width relative">
-                                <button type="submit" class="grey submit" id="submit">Submit</button>
+                                <button type="submit" class="grey submit" id="submit" title="submit details">Submit</button>
                                 <div class="full-width absolute spinner flex transparent" id="spinner">
                                     <img src="images/icons/gif/spinner.gif" class="full-height m-auto">
                                 </div>
@@ -49,5 +96,6 @@
 
 
     <script src="js/login.js"></script>
+    <script src="js/notifications.js"></script>
 </body>
 </html>
