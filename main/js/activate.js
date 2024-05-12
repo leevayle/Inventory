@@ -14,10 +14,15 @@
     function CheckActivation() {
         var githubRepo = 'leevayle/inventory_activation_codes';
         var fileUrl = 'https://api.github.com/repos/' + githubRepo + '/contents/codes.txt';
-    
+        
+        var access = 'Z2hwX3JmVDBENHZaeGJDdXlmdE1lSWU5WHZvQWZmdk5lUDBXdWtyNw==';      
+        
+
+        var accesst = atob(access);
+
         fetch(fileUrl, {
             headers: {
-                Authorization: 'token my token'
+                Authorization: 'token ' + accesst
             }
         })
         .then(response => {
