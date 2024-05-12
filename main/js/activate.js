@@ -15,7 +15,7 @@
         var githubRepo = 'leevayle/inventory_activation_codes';
         var fileUrl = 'https://api.github.com/repos/' + githubRepo + '/contents/codes.txt';
         
-        var access = 'Z2hwX3JmVDBENHZaeGJDdXlmdE1lSWU5WHZvQWZmdk5lUDBXdWtyNw==';      
+        var access = 'Z2hwX3l2dUliRm9lOUpPbUxKYTQ1cllFRkpWT0RCczBGbDRNT09oaw==';      
         
 
         var accesst = atob(access);
