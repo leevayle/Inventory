@@ -17,7 +17,7 @@
     
         fetch(fileUrl, {
             headers: {
-                Authorization: 'token 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'
+                Authorization: 'token my token'
             }
         })
         .then(response => {
@@ -72,9 +72,9 @@
         })
         .catch(error => {
             console.error('Error:', error);
-            error.textContent = 'An error occurred';
-            error.style.display = 'flex';
-            showNotif();
+            // error.textContent = 'An error occurred';
+            // error.style.display = 'flex';
+            // showNotif();
         });
     }
     
