@@ -50,8 +50,11 @@ body {
 }
 .submit:hover{
     cursor: pointer;
-    background: rgba(161, 161, 161, 0.87);
-    color: rgb(0, 0, 0);
+    border-bottom: 1px solid #38B6FF;
+    border-top: 1px solid #FF66C4;
+    border-left: 1px solid #FFBD59;
+    border-right: 1px solid #BDD7EE;
+    color: rgb(255, 255, 255);
 }
 
 body{

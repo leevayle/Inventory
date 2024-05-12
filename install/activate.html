@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | leenx inventory v 1.0</title>
-    <link rel="icon" href="images/icons/icon.png">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/universal.css">
-    <link rel="stylesheet" href="css/notifications.css">
-    <link rel="stylesheet" href="css/welcome.css">
-    <link rel="stylesheet" href="css/login.css">
+    <title>Aactivation | leenx inventory v 1.0</title>
+    <link rel="icon" href="../main/images/icons/icon.png">
+    <link rel="stylesheet" href="../main/css/fonts.css">
+    <link rel="stylesheet" href="../main/css/universal.css">
+    <link rel="stylesheet" href="../main/css/notifications.css">
+    <link rel="stylesheet" href="../main/css/welcome.css">
+    <link rel="stylesheet" href="../main/css/login.css">
 </head>
 <body>    
 
@@ -24,7 +24,7 @@
                             
                         </div>
                         <div class="closebtn flex m-auto" id="closesuccess">
-                            <img src="images/icons/close.svg" class="icon flex m-auto">
+                            <img src="../main/images/icons/close.svg" class="icon flex m-auto">
                         </div>
                     </div>
 
@@ -33,7 +33,7 @@
                             
                         </div>
                         <div class="closebtn flex m-auto" id="closeerror">
-                            <img src="images/icons/close red.svg" class="icon flex m-auto">
+                            <img src="../main/images/icons/close red.svg" class="icon flex m-auto">
                         </div>
                     </div>
 
@@ -42,7 +42,7 @@
                             
                         </div>
                         <div class="closebtn flex m-auto" id="closeinfo">
-                            <img src="images/icons/close blue.svg" class="icon flex m-auto">
+                            <img src="../main/images/icons/close blue.svg" class="icon flex m-auto">
                         </div>
                     </div>
 
@@ -51,7 +51,7 @@
                             
                         </div>
                         <div class="closebtn flex m-auto" id="closewarning">
-                            <img src="images/icons/close orange.svg" class="icon flex m-auto">
+                            <img src="../main/images/icons/close orange.svg" class="icon flex m-auto">
                         </div>
                     </div>
 
@@ -64,24 +64,22 @@
             <div class="main-cont main-hidden opaque" id="main-hidden">
                 
                 <div class="stack relative">
-                    <p class="slogan" id="slogan">Log in</p>   
+                    <p class="slogan" id="slogan">Activate</p>   
                     <div class="progress welcome"></div>             
                 </div>
                 <div class="stack relative">
                     <div class="full-width block form">
                         <form1  id="form">
                             <div class="relative full-width">
-                                <input type="text" autocomplete="off" spellcheck="false" title="Id number" class="input textinput grey" id="id" placeholder="">
+                                <input type="text" autocomplete="off" spellcheck="false" title="Activation key" class="input textinput grey" id="id" placeholder="">
                             </div>
-                            
-                            <input type="password" autocomplete="off" title="password" class="input textinput grey" id="password" placeholder="">
     
-                            <p class="slogan" style="font-size: small; color: grey;" title="reset password"><a href="#" style="color: inherit;">Forgot password?</a> </p>
+                            <p class="slogan" style="font-size: small; color: grey;" title="Purchase key"><a href="#" style="color: inherit;">Don't have key?</a> </p>
                             
                             <div class=" flex full width relative">
-                                <button type="submit" class="grey submit" id="submit" title="submit details">Submit</button>
+                                <button type="submit" class="grey submit" id="submit" title="">Activate</button>
                                 <div class="full-width absolute spinner flex transparent" id="spinner">
-                                    <img src="images/icons/gif/spinner.gif" class="full-height m-auto">
+                                    <img src="../main/images/icons/gif/spinner.gif" class="full-height m-auto">
                                 </div>
                             </div>
                             
@@ -95,7 +93,8 @@
     
 
 
-    <script src="js/login.js" defer></script>
-    <script src="js/notifications.js" defer></script>
+    
+    <script src="../main/js/notifications.js" defer></script>
+    <script src="../main/js/activate.js" defer></script>
 </body>
 </html>

@@ -56,7 +56,7 @@
 
         if (!id.value && !password.value){            
 
-            warningtext.textContent = 'Provide your Id and Password';
+            warningtext.textContent = 'Provide your ID and Password';
             warning.style.display = 'flex';
             showNotif();
 
