@@ -10,12 +10,40 @@
     const spinner = document.getElementById("spinner");
     const id = document.getElementById("id");
 
+    function updateLeenxStatus() {
+        $.ajax({
+            url: "../main/leenx2.php", // Change this to the path of your PHP script
+            type: "POST",
+            dataType: "json",
+            success: function(response) {
+                if (response.success) {
+                    setTimeout(() => {
+                        location.href = "../index.html";
+                    }, 4000);
+                } else {                   
+                    
+                    setTimeout(() => {
+                        errortext.textContent = 'An error occured! ';
+                        error.style.display = 'flex';
+                    showNotif();
+                    }, 4000);
+                }
+            },
+            error: function(xhr, status, error) {
+                // Handle error response
+                console.error("AJAX request failed: " + status + ", " + error);
+            }
+        });
+    }
+    
+    
+
     // update to config
     function CheckActivation() {
         var githubRepo = 'leevayle/inventory_activation_codes';
         var fileUrl = 'https://api.github.com/repos/' + githubRepo + '/contents/codes.txt';
         
-        var access = 'Z2hwX3l2dUliRm9lOUpPbUxKYTQ1cllFRkpWT0RCczBGbDRNT09oaw==';      
+        var access = '';      
         
 
         var accesst = atob(access);
@@ -50,7 +78,7 @@
             
             if (matchFound) {
                 
-                successtext.textContent = 'Activation success enjoy!';
+                successtext.textContent = 'Activating kindly hang on ';
                 success.style.display = 'flex';
                 showNotif();
 
@@ -59,10 +87,8 @@
 
                 //ajax for database update
                 
+                updateLeenxStatus();
                 
-                setTimeout(() => {
-                    location.href = "../index.html";
-                }, 4000);
 
             } else {
 

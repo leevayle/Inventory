@@ -31,10 +31,42 @@ setTimeout(()=>{
 },10400);
 
 setTimeout(()=>{
-    document.getElementById("loading").style.opacity = "0";
-    document.getElementById("main-hidden").style.opacity = "1";
+    checkLeenxStatus();
+    
 },11400);
 
-setTimeout(()=>{
-    location.href = "login.html";
-},16400);
+
+
+function checkLeenxStatus() {
+    $.ajax({
+        url: "./leenx.php", // Change this to the path of your PHP script
+        type: "GET",
+        success: function(status) {
+            // Convert status to integer
+            status = parseInt(status);
+
+            // Load different pages based on status
+            if (status === 40) {
+                // Status is 40, load page 1
+                window.location.href = "../install/activate.html";
+            }
+            if (status === 7) {
+                
+                document.getElementById("loading").style.opacity = "0";
+                document.getElementById("main-hidden").style.opacity = "1";
+                setTimeout(()=>{
+                    window.location.href = "../main/login.html";
+                },2400);
+            } else {
+                // Handle other statuses
+                console.log("Unknown status: " + status);
+            }
+        },
+        error: function(xhr, status, error) {
+            // Handle error response
+            console.error("AJAX request failed: " + status + ", " + error);
+        }
+    });
+}
+
+
