@@ -43,7 +43,7 @@ $hashed_password = password_hash("admin", PASSWORD_DEFAULT);
 
 // Add default row to Biodata table
 $sql_insert_biodata = "INSERT INTO Biodata (id, fname, lname, role, password, dob, location) 
-                       VALUES (123456789, 'admin', 'admin', 'superadmin', '$hashed_password', '1990-01-01', 'Earth')";
+                       VALUES (123456789, 'admin', 'admin', 'superadmin', '$hashed_password', '2002-03-08', 'Kisii')";
 if ($conn->query($sql_insert_biodata) !== TRUE) {
     $success = false;
     $errors[] = "Error inserting default row into Biodata table: " . $conn->error;

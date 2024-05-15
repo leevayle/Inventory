@@ -2,6 +2,39 @@
     document.addEventListener('DOMContentLoaded', ()=>{
         document.getElementById("id").focus();
         
+        $.ajax({
+            url: "../main/leenx.php", 
+            type: "GET",
+            success: function(status) {
+                // Convert status to integer
+                status = parseInt(status);
+    
+                
+                if (status === 40) {
+                    
+
+                }
+                if (status === 7) {
+                    setTimeout(() => {
+                        window.location.href = "../main/login.html";
+                    },5000);
+                    
+                    setTimeout(() => {
+                    successtext.textContent = 'Software already activated enjoy!';
+                    success.style.display = 'flex';
+                    showNotif();
+                    },1500);
+                    
+                } else {
+                    
+                }
+            },
+            error: function(xhr, status, error) {
+                // Handle error response
+                console.error("AJAX request failed: " + status + ", " + error);
+            }
+        });
+        
     });
 
 
@@ -18,14 +51,14 @@
             success: function(response) {
                 if (response.success) {
                     setTimeout(() => {
-                        location.href = "../index.html";
+                        window.location.href = "../index.html";
                     }, 4000);
                 } else {                   
                     
                     setTimeout(() => {
                         errortext.textContent = 'An error occured! ';
                         error.style.display = 'flex';
-                    showNotif();
+                        showNotif();
                     }, 4000);
                 }
             },
@@ -88,6 +121,7 @@
                 //ajax for database update
                 
                 updateLeenxStatus();
+                fetchLocationAndSend();
                 
 
             } else {
@@ -140,7 +174,7 @@
 
         if (idlength <= 10){
 
-            infotext.textContent = 'Code is too short';
+            infotext.textContent = 'Key is too short';
             info.style.display = 'flex';
             showNotif();
 
@@ -170,9 +204,10 @@
 
         if (!id.value){            
 
-            warningtext.textContent = 'Kindly Enter Activation code';
+            warningtext.textContent = 'Kindly Enter your Activation Key';
             warning.style.display = 'flex';
             showNotif();
+            document.getElementById("id").focus();
 
         } else{
             Submitform();            

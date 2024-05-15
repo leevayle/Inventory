@@ -4,32 +4,7 @@
         document.getElementById("spinner").addEventListener('contextmenu', (e)=>{
             event.preventDefault();
         });
-
-        function checkLeenxStatus() {
-            $.ajax({
-                url: "leenx.php", // Change this to the path of your PHP script
-                type: "GET",
-                success: function(status) {
-                    // Convert status to integer
-                    status = parseInt(status);
         
-                    // Load different pages based on status
-                    if (status === 40) {
-                        // Status is 40, load page 1
-                        window.location.href = "../install/activate.html";
-                    }
-                    if (status === 7) {
-                        
-                    } else {
-                        
-                    }
-                },
-                error: function(xhr, status, error) {
-                    // Handle error response
-                    console.error("AJAX request failed: " + status + ", " + error);
-                }
-            });
-        }
         checkLeenxStatus();
     });
 
@@ -42,7 +17,7 @@
 
     function Clearform(){
         setTimeout(()=>{
-            id.value = "";
+            // id.value = "";
             password.value = "";
         },1550);
         
@@ -60,6 +35,8 @@
             document.getElementById("id").focus();
             spinner.style.opacity = "0"; 
             submit.textContent = "Submit";
+        }else{
+            authenticateUser();
         }
     };
 
@@ -67,8 +44,7 @@
 
         spinner.style.opacity = "1"; 
         submit.textContent = "";
-
-        //submit logic
+        
 
         Clearform();
         setTimeout(()=>{
@@ -76,6 +52,51 @@
         },1500);
         
     };
+
+    function authenticateUser() {
+        var id = document.getElementById('id').value;
+        var password = document.getElementById('password').value;
+        
+        // Display spinner while processing
+        //document.getElementById('spinner').style.display = 'flex';
+        
+        // AJAX request
+        $.ajax({
+            type: "POST",
+            url: "authenticate.php",
+            data: {
+                id: id,
+                password: password
+            },
+            success: function(response) {
+
+                
+
+                spinner.style.opacity = "0"; 
+                submit.textContent = "Submit";
+    
+                // Parse JSON response
+                var data = JSON.parse(response);
+    
+                // Display appropriate notification based on response
+                if (data.success) {
+
+                    // successtext.textContent = 'Login successful';
+                    // success.style.display = 'flex';
+                    // showNotif();
+
+                    successtext.textContent = data.message;
+                    success.style.display = 'flex';
+                    showNotif();
+                } else {
+                    errortext.textContent = data.message;
+                    error.style.display = 'flex';
+                    showNotif();
+                }
+            }
+        });
+    }
+    
     
     
     function Validate(){
@@ -85,6 +106,7 @@
             warningtext.textContent = 'Provide your ID and Password';
             warning.style.display = 'flex';
             showNotif();
+            id.focus();
 
         }
 
@@ -93,6 +115,7 @@
             warningtext.textContent = 'Id is required';
             warning.style.display = 'flex';
             showNotif();
+            id.focus();
         }
 
         if (!password.value && id.value){
@@ -100,6 +123,7 @@
             warningtext.textContent = 'Password is required';
             warning.style.display = 'flex';
             showNotif();
+            password.focus();
         }
         
         
