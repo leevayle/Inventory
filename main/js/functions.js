@@ -51,6 +51,18 @@ function showModal() {
   }
 
   function RedirectUsers(){
-    window.location = "./admin-dash.html";
+    const userrole = atob(localStorage.getItem("role"));
+
+    if (userrole === "admin") {
+        window.location = "./admin-dash.html";
+    }
+
+    if (userrole === "user") {
+        window.location = "./user-dash.html";
+    }
+
+    if (userrole === "superadmin") {
+        window.location = "./s-admin-dash.html";
+    }
   }
   

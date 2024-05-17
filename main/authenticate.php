@@ -46,7 +46,14 @@ if (isset($_POST['id']) && isset($_POST['password'])) {
         // Verify password
         if (password_verify($userpassword, $hashed_password)) {
             // Password correct
-            $response = array("success" => true, "message" => "Login successful");
+            $role = $row['role'];
+            $status = $row['status'];
+            $response = array(
+                "success" => true,
+                "message" => "Login successful",
+                "role" => $role,
+                "status" => $status
+            );
             echo json_encode($response);
         } else {
             // Password incorrect

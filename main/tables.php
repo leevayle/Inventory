@@ -23,7 +23,7 @@ $sql_biodata = "CREATE TABLE IF NOT EXISTS Biodata (
     fname VARCHAR(255) NOT NULL,
     lname VARCHAR(255) NOT NULL,
     role ENUM('user', 'admin', 'superadmin') DEFAULT 'user',
-    status ENUM('yes', 'no') DEFAULT 'no',
+    status ENUM('yes', 'no') DEFAULT 'yes',
     password VARCHAR(255),
     old_password VARCHAR(255),
     theme ENUM('1', '2', '3', '4') DEFAULT '1',

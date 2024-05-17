@@ -1,0 +1,42 @@
+
+
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #ffffff;
+    --accent-color: #5065F6;
+    --background-color: #FFF8EB;
+    --text-color: #acacac;
+    --top-svg-color: #e9e9e9e0 ;
+}
+
+body,html{
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+
+
+
+.leftnav{
+    background-color: var(--secondary-color);
+}
+
+.head-nav{
+    background-color: var(--secondary-color);
+    border-left: 2px solid var(--background-color);
+}
+
+.archive-svg path,
+.archive-svg rect,
+.archive-svg polyline,
+.archive-svg line {
+    fill: var(--top-svg-color) !important; /* Change this to your desired color */
+     }
+
+.collapse:hover .archive-svg path,
+.collapse:hover .archive-svg rect,
+.collapse:hover .archive-svg polyline,
+.collapse:hover .archive-svg line {
+    
+    fill: var(--text-color) !important;
+}

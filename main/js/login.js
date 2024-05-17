@@ -6,7 +6,7 @@
         const computedStyle = window.getComputedStyle(modalcont);
 
         // Check if the computed display property is "none"
-        if (computedStyle.display === "none") {
+        if (computedStyle.display == "none") {
             document.getElementById("id").focus();
         } else {
             document.getElementById("dob").focus();
@@ -99,17 +99,21 @@
                 password: password
             },
             success: function(response) {
-
-                
-
                 spinner.style.opacity = "0"; 
                 submit.textContent = "Submit";
-    
+        
                 // Parse JSON response
                 var data = JSON.parse(response);
                 
                 if (data.success) {
-
+                    // Encode role and status and store in localStorage
+                    var encodedRole = btoa(data.role);
+                    var encodedStatus = btoa(data.status);
+                    localStorage.setItem("role", encodedRole);
+                    localStorage.setItem("status", encodedStatus);
+                    // console.log(atob(localStorage.getItem("role")));
+                    // console.log(atob(localStorage.getItem("status")));
+        
                     successtext.textContent = data.message;
                     success.style.display = 'flex';
                     showNotif();
@@ -117,19 +121,19 @@
                     Blur();
                     
                     setTimeout(()=>{
-                        RedirectUsers()
+                        RedirectUsers();
                     },2000);
-
+        
                 } else {
-
                     errortext.textContent = data.message;
                     error.style.display = 'flex';
                     showNotif();
                 }
             }
         });
+        
+        
     }
-    
     
     
     function Validate(){
