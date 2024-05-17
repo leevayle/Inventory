@@ -22,6 +22,31 @@ function checkLeenxStatus() {
             console.error("AJAX request failed: " + status + ", " + error);
         }
     });
-}
+} 
+
+function showModal() {
+    const modal = document.getElementById("modal");
+    const modalcont = document.getElementById("modal-cont");
+    const mainform = document.getElementById("main-form");
+
+    mainform.style.opacity = "0";
+    modal.style["z-index"] = "3";
+    modalcont.style.display = "inline";
+    
+  }
   
+  function closeModal() {
+    const modal = document.getElementById("modal");
+    const modalcont = document.getElementById("modal-cont");
+    const mainform = document.getElementById("main-form");
+
+    
+    modal.style["z-index"] = "-1";
+    modalcont.style.display = "none";
+    mainform.style.opacity = "1";
+
+    document.getElementById("r-id").value = "";
+    document.getElementById("r-password").value = "";
+    document.getElementById("dob").value = "";
+  }
   

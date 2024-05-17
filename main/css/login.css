@@ -72,6 +72,29 @@ body{
     font-size: xx-large;
 }
 
+/* Reset password modal */
+.modal{
+    width: 99.5%;
+    height: auto;
+    height: 90%;
+    min-height: 300px;
+    z-index: -1;
+}
+.modalcont{
+    width: 90%;
+    height: auto;
+    max-width: 500px;
+    min-height: 400px;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(240, 131, 255, 0.3) 0px 30px 50px -30px; */
+    border-radius: 20px;
+    /* border: 1px solid rgb(34, 34, 34);
+    border-top: 1px solid #38b6ff98;
+    border-bottom:1px solid #ff66c498;
+    border-left: 1px solid #ffbd599d;
+    border-right:1px solid #bdd7ee9d; */
+    display: none;
+}
+
 
 /* Responsiveness - HEIGHT*/
 

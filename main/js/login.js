@@ -1,6 +1,17 @@
     
     document.addEventListener('DOMContentLoaded', ()=>{
-        document.getElementById("id").focus();
+        const modalcont = document.getElementById("modal-cont");
+
+        // Get the computed style of the modalcont element
+        const computedStyle = window.getComputedStyle(modalcont);
+
+        // Check if the computed display property is "none"
+        if (computedStyle.display === "none") {
+            document.getElementById("id").focus();
+        } else {
+            document.getElementById("dob").focus();
+        }
+
         document.getElementById("spinner").addEventListener('contextmenu', (e)=>{
             event.preventDefault();
         });
@@ -22,13 +33,20 @@
         },1550);
         
     };
+    function ClearId(){
+        id.value = "";
+    }
+    function Blur(){
+        id.blur();
+        password.blur();
+    }
 
     function Sanitize(){
         const idlength = id.value.length;
 
-        if (idlength>10){
+        if (idlength>15){
 
-            infotext.textContent = 'Id is too long (max is 10)';
+            infotext.textContent = 'Id is too long (max is 15)';
             info.style.display = 'flex';
             showNotif();
 
@@ -77,18 +95,17 @@
     
                 // Parse JSON response
                 var data = JSON.parse(response);
-    
-                // Display appropriate notification based on response
+                
                 if (data.success) {
-
-                    // successtext.textContent = 'Login successful';
-                    // success.style.display = 'flex';
-                    // showNotif();
 
                     successtext.textContent = data.message;
                     success.style.display = 'flex';
                     showNotif();
+                    ClearId();
+                    Blur();
+
                 } else {
+
                     errortext.textContent = data.message;
                     error.style.display = 'flex';
                     showNotif();
@@ -132,6 +149,7 @@
         }
     };
 
+
     
 
     
@@ -139,6 +157,49 @@
     submit.addEventListener('click', ()=>{
         Validate();
 
+    });
+
+    // enter submits
+    document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+         
+          const modalcont = document.getElementById('modal-cont');
+        //   const mainhidden = document.getElementById('main-hidden');
+        //   if(modal.style.display === 'none'){
+        //     Validate();
+        //   }
+        //   if(mainhidden.style.opacity == '0'){
+        //     Validate();
+        //   }
+
+          const computedStyle = window.getComputedStyle(modalcont);
+          if (computedStyle.display === "none") {
+            Validate();
+        }
+        }
+      });
+
+      // Preview shortcuts
+    document.addEventListener('keydown', function(event) {
+        
+        if (event.ctrlKey && event.key === '.') {
+            
+            if (password.type === 'text'){
+                password.type = 'password';
+        
+            }
+        }
+        if (event.ctrlKey && event.key === ',') {
+            
+            if (password.type === 'password'){
+                password.type = 'text';
+                setTimeout(() => {
+                    password.type = 'password';  
+                }, 2000);
+        
+            }
+        }
     });
     
     

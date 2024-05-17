@@ -60,10 +60,47 @@
             </div>
         </section>
 
-        <div class="main login fixed">
+
+        <!-- Reset password modal -->
+        <div class="full-width fixed flex modal" id="modal">
+            <div class="flex m-auto modalcont" id="modal-cont">
+                <div class="stack relative">
+                    <p class="slogan" id="slogan">Reset</p>   
+                    
+                                 
+                </div>
+                <div class="stack relative">
+                    <div class="full-width block form">
+                        <form1  id="r-form">
+                            <div class="relative full-width">
+                                <input type="text" autocomplete="off" spellcheck="false" title="Date of birth" class="input textinput grey" id="dob" placeholder="Day of birth eg. 24">
+                            </div>
+                            
+                            <input type="text" autocomplete="off" title="Id No" class="input textinput grey" id="r-id" placeholder="ID.NO">
+                            <input type="password" autocomplete="off" title="New password" class="input textinput grey" id="r-password" placeholder="New password">
+    
+                            
+                            <div class=" flex full width relative">
+                                <button type="submit" class="grey submit" id="r-submit" >Reset</button>
+                                <div class="full-width absolute spinner flex transparent" id="r-spinner">
+                                    <img src="images/icons/gif/loading dots.gif" class="full-height m-auto">
+                                </div>
+                            </div>
+                            
+                        </form1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="main login fixed" id="main-form">
+            
+            <div class="main-cont main-hidden opaque" id="main-hidden">               
                 
-            <div class="main-cont main-hidden opaque" id="main-hidden">
-                
+
+
                 <div class="stack relative">
                     <p class="slogan" id="slogan">Log in</p>   
                     <div class="progress welcome"></div>             
@@ -77,10 +114,10 @@
                             
                             <input type="password" autocomplete="off" title="password" class="input textinput grey" id="password" placeholder="">
     
-                            <p class="slogan" style="font-size: small; color: grey;" title="reset password"><a href="#" style="color: inherit;">Forgot password?</a> </p>
+                            <p class="slogan" style="font-size: small; color: grey;" title="reset password" onclick="showModal()"><a href="#" style="color: inherit;">Forgot password?</a> </p>
                             
                             <div class=" flex full width relative">
-                                <button type="submit" class="grey submit" id="submit" title="submit details">Submit</button>
+                                <button type="submit" class="grey submit" id="submit" >Submit</button>
                                 <div class="full-width absolute spinner flex transparent" id="spinner">
                                     <img src="images/icons/gif/spinner.gif" class="full-height m-auto">
                                 </div>
@@ -98,6 +135,7 @@
 
     <script src="js/login.js" defer></script>
     <script src="js/functions.js" defer></script>
+    <script src="js/reset password.js" defer></script>
     <script src="js/notifications.js" defer></script>
 </body>
 </html>
