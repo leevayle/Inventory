@@ -17,7 +17,17 @@
         });
         
         checkLeenxStatus();
+        Updatetoptitle();
     });
+
+    function Updatetoptitle(){
+        const tname = atob(localStorage.getItem("leenx_name"));
+        const tversion = atob(localStorage.getItem('leenx_version'));
+        
+        const toptitle = document.getElementById('top-title');
+
+        toptitle.innerHTML = `Login` + ` | ` + tname  +` V-`+ tversion;
+    }
 
 
 
@@ -71,6 +81,8 @@
         
     };
 
+    
+
     function authenticateUser() {
         var id = document.getElementById('id').value;
         var password = document.getElementById('password').value;
@@ -103,6 +115,10 @@
                     showNotif();
                     ClearId();
                     Blur();
+                    
+                    setTimeout(()=>{
+                        RedirectUsers()
+                    },2000);
 
                 } else {
 

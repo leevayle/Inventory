@@ -69,6 +69,7 @@ function CreateTables() {
             } else {
                 setTimeout(()=>{
                     text.innerHTML = "Error creating tables";
+                    progress.style.width = "100%";
                 },2000)
             }
         },
@@ -111,6 +112,7 @@ setTimeout(()=>{
                         link2.innerHTML = "Go to login";
                         link.style.display = 'none';
                         link2.style.display = 'block';
+                        progress.style.width = "100%";
                     },700)
                 }
             },

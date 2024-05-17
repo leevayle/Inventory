@@ -49,4 +49,8 @@ function showModal() {
     document.getElementById("r-password").value = "";
     document.getElementById("dob").value = "";
   }
+
+  function RedirectUsers(){
+    window.location = "./admin-dash.html";
+  }
   

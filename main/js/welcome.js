@@ -69,4 +69,16 @@ function checkLeenxStatus() {
     });
 }
 
+function Updateslogan(){
+    const slogan = atob(localStorage.getItem("leenx_slogan"));
+    
+    const slogandoc = document.getElementById('slogan');
+
+    slogandoc.innerHTML = slogan;
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    Updateslogan();
+});
+
 

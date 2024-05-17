@@ -25,6 +25,7 @@ $sql_biodata = "CREATE TABLE IF NOT EXISTS Biodata (
     role ENUM('user', 'admin', 'superadmin') DEFAULT 'user',
     status ENUM('yes', 'no') DEFAULT 'no',
     password VARCHAR(255),
+    old_password VARCHAR(255),
     theme ENUM('1', '2', '3', '4') DEFAULT '1',
     profile TEXT,
     admin_id INT,
@@ -103,6 +104,20 @@ if ($conn->query($sql_leenx) !== TRUE) {
         $success = false;
         $errors[] = "Error inserting default row into Leenx table: " . $conn->error;
     }
+}
+
+// Create Reset table
+$sql_reset = "CREATE TABLE IF NOT EXISTS Reset (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    date DATETIME NOT NULL,
+    frequency INT DEFAULT 1,
+    FOREIGN KEY (user_id) REFERENCES Biodata(id)
+)";
+
+if ($conn->query($sql_reset) !== TRUE) {
+    $success = false;
+    $errors[] = "Error creating Reset table: " . $conn->error;
 }
 
 // Check if all queries were successful
