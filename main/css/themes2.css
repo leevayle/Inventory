@@ -3,6 +3,7 @@
     --primary-color: #ffffff;
     --secondary-color: #292929;
     --accent-color: #5065F6;
+    --scrollbar-thumb: #5066f68c;
     --background-color: #1E1E1E;
     --text-color: #a8a8a8;
     --top-svg-color: #494949 ;
@@ -25,6 +26,28 @@ body,html{
     border-left: 2px solid var(--background-color);
 }
 
+.svg path,
+.svg rect,
+.svg polyline,
+.svg line {
+    /* fill: var(--top-svg-color) !important; */
+    stroke: var(--top-svg-color) !important;
+}
+
+.searchbtn:hover .svg path,
+.searchbtn:hover .svg rect,
+.searchbtn:hover .svg polyline,
+.searchbtn:hover .svg line{
+    stroke: var(--accent-color) !important;
+}
+
+.menubtnleft:hover .svg path,
+.menubtnleft:hover .svg rect,
+.menubtnleft:hover .svg polyline,
+.menubtnleft:hover .svg line {
+    fill: var(--accent-color) !important;
+    stroke: var(--accent-color) !important;
+}
 
 .archive-svg path,
 .archive-svg rect,
@@ -39,4 +62,19 @@ body,html{
 .collapse:hover .archive-svg line {
     
     fill: var(--text-color) !important;
+}
+
+.navcont::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb); 
+}
+.navcont::-webkit-scrollbar-track{
+    background-color: #ffffff00;
+}
+
+.search-field{
+    color: var(--text-color);
+}
+
+.profile-pic{
+    border: 1px solid var(--text-color);
 }

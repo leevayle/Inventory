@@ -13,8 +13,9 @@ body,html{
 .leftnav{
     height: 99.5%;
     width: 14%;
+    min-width: 80px;
     display: block;
-    max-height: 99.6%;
+    max-height: 99.8%;
     overflow: hidden;
     scrollbar-width: thin;
 }
@@ -28,6 +29,9 @@ body,html{
     height: 50px;
     width: 100%;
 }
+/* #logo-left{
+    margin: auto;
+} */
 
 .navcont {
     height: auto;
@@ -35,21 +39,24 @@ body,html{
     overflow-y: auto;
     min-height: 50%;
     max-height: 91%;
-    scroll-snap-type: none;
 
-    /* Hide scrollbar for Firefox and edge x IE */
-    scrollbar-width: none;  /* Firefox */
-    -ms-overflow-style: none;  /* IE and Edge */
+
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
 .navcont::-webkit-scrollbar {
-    display: none;
+    width: 1px; /* Set a specific width for the scrollbar */
+    
 }
+
+.navcont::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
 
 .head-nav{
-    width: 100%;
+    width: 99%;
     height: 50px;
+    padding-left: 20px;
 }
 
 .main-cont{
@@ -80,6 +87,91 @@ body,html{
 }
 
 
+.menubtnleft{
+    width: 50px;
+    height: 65%;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.menubtnleft:hover{
+    cursor: pointer;
+}
+.search{
+    width: 60%;
+    height: 90%;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.searchbtn{
+    height: 50%;
+    margin-right: 0px;
+}
+.searchinput{
+    width: 90%;
+    height: 70%;
+    text-align: left;
+}
+.search-field{
+    background:transparent;
+    font-family: 'century gothic',sans-serif;
+}
+.search-field{
+    height: 89%;
+    max-width: 80%;
+    padding-left: 5px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+.profile{
+    width: 30%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.notification{
+    width: 30px;
+    height: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+}
+.profile-pic{
+    height: 40px;
+    min-width: 40px;
+    max-width: 40px;
+    margin-left: 30px;
+    border-radius: 40%;
+    overflow: hidden;
+}
+.profile-names{
+    margin-left: 15px;
+    width: auto;
+}
+#name{
+    height: 60%;
+    padding-top: 3px;
+    white-space: nowrap;
+    font-family: 'poppins',sans-serif;
+}
+#role{
+    height: 40%;
+    margin-top: -4px;
+    font-weight: lighter;
+    font-size: small;
+}
+
+.expand-profile{
+    width: 30px;
+    height: 80%;
+    margin-left: 20px;
+    margin-top: 3px;
+    display: none;
+}
 
 
 
