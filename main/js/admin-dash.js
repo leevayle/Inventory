@@ -73,3 +73,42 @@ function CollapseRestore(){
     Restore();
   }
 }
+
+function ShowLogout(){
+    
+    const btn = document.getElementById('logoutmenu');
+
+    const currentStyle = getComputedStyle(btn);
+    const isHidden = currentStyle.display === 'none';
+    
+    if (isHidden) {
+      btn.style.display = 'block';
+    } else {
+      btn.style.display = 'none';
+    }   
+    
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+    const btn = document.getElementById('expand-profile');
+    btn.addEventListener('click',ShowLogout);   
+});
+
+function ShowNotification(){
+    
+    const n = document.getElementById('notification-expand');
+
+    const currentStyle = getComputedStyle(n);
+    const isHidden = currentStyle.display === 'none';
+    
+    if (isHidden) {
+      n.style.display = 'block';
+    } else {
+      n.style.display = 'none';
+    }   
+    
+}
+document.addEventListener("DOMContentLoaded",()=>{
+    const btnn = document.getElementById('expand-notification');
+    btnn.addEventListener('click',ShowNotification);   
+});

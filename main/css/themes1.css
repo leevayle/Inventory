@@ -6,8 +6,11 @@
     --accent-color: #5065F6;
     --scrollbar-thumb: #5066f69a;
     --background-color: #FFF8EB;
-    --text-color: #acacac;
-    --top-svg-color: #d1d1d1e0 ;
+    --text-color: #3f3f3f;
+    --top-svg-color: #bebebee0 ;
+    --status-ok: rgb(0, 230, 0);
+    --status-not-ok: rgb(230, 65, 0);
+    --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 body,html{
@@ -67,6 +70,25 @@ body,html{
     
     fill: var(--text-color) !important;
 }
+
+.svgn path,
+.svgn rect,
+.svgn polyline,
+.svgn line {
+    /* fill: var(--top-svg-color) !important; */
+    fill: var(--top-svg-color) !important;
+}
+#vector{
+    fill: var(--top-svg-color) !important;
+}
+.notification:hover .svgn path,
+.notification:hover .svgn rect,
+.notification:hover .svgn polyline,
+.notification:hover .svgn line {
+    fill: var(--accent-color) !important;
+}
+
+
 .navcont::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-thumb); 
 }
@@ -78,5 +100,71 @@ body,html{
     color: var(--text-color);
 }
 .profile-pic{
-    border: 1px solid var(--text-color);
+    /* border: 1px solid var(--text-color); */
+    /* box-shadow: var(--box-shadow); */
+    border: 2px solid var(--top-svg-color);
+}
+.profile-pic:hover{
+    /* border: 1px solid var(--text-color); */
+    /* box-shadow: var(--box-shadow); */
+    border: 2px solid var(--accent-color);
+}
+.status-indicator{
+    background-color: var(--top-svg-color);
+    border: 2px solid var(--secondary-color);
+}
+
+#role, #role1{
+    color: #797979;
+}
+#name, #name1{
+    color: var(--text-color);
+}
+
+.expand-profile:hover .svg path,
+.expand-profile:hover .svg rect,
+.expand-profile:hover .svg polyline,
+.expand-profile:hover .svg line
+{
+    
+    stroke: var(--accent-color) !important;
+}
+#pathd3{
+    fill: var(--background-color);
+}
+
+.expand, #notification-expand{
+    box-shadow: var(--box-shadow);
+    background-color: var(--secondary-color);
+}
+
+#pathd{
+    fill: var(--top-svg-color) !important;
+}
+#pathd1, #pathd2{
+    fill: var(--status-ok) !important;
+}
+.logout-btn:hover #pathd1,
+.logout-btn:hover #pathd2
+{
+    fill: var(--status-not-ok) !important;
+}
+
+.notif-title{
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--top-svg-color);
+}
+.tile{
+    background-color: var(--secondary-color);
+}
+
+
+
+
+@media screen and (max-width:500px){
+    .head-nav{
+        
+        border-left: none;
+    
+    }
 }
