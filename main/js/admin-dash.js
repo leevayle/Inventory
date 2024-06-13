@@ -55,13 +55,28 @@ document.addEventListener('keydown', function(event) {
   });
 
 function Collapse(){
+  const nav = document.getElementById('leftnav');
+  const currentStyle = getComputedStyle(nav);
+  if(currentStyle.display === "none"){
+    
+    
+  } else{
     document.getElementById('leftnav').style.width = '6%';
     document.getElementById('main').style.width = '94%';
+  }
 }
 
 function Restore(){
+  const nav = document.getElementById('leftnav');
+  const currentStyle = getComputedStyle(nav);
+  if(currentStyle.display === "none"){
+    
+    
+    
+  } else{
     document.getElementById('leftnav').style.width = '14%';
     document.getElementById('main').style.width = '86%';
+  }
 }
 
 function CollapseRestore(){
