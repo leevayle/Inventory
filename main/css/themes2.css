@@ -23,6 +23,30 @@ body,html{
 .leftnav{
     background-color: var(--secondary-color);
 }
+.nav-svg-stroke{
+    stroke: var(--text-color) !important;
+}
+
+.nav-item{
+    transition: all ease-in-out 0.3s;
+    border: 1px solid var(--secondary-color);
+}
+.nav-item:hover{
+    /* font-weight: bold; */
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+.nav-item-active{
+    /* font-weight: bold; */
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+.nav-svg-active{
+   stroke: var(--accent-color) !important;
+}
+.nav-item:hover .nav-svg-stroke{
+    stroke: var(--accent-color) !important;
+}
 
 .head-nav{
     background-color: var(--secondary-color);
