@@ -1,10 +1,13 @@
 
-
+*{
+    transition: all ease-in 0.2s !important;
+}
 :root {
     --primary-color: #ffffff;
     --secondary-color: #ffffff;
     --accent-color: #5065F6;
     --scrollbar-thumb: #5066f69a;
+    --activenav:#e0f1ff65;
     --background-color: #FFF8EB;
     --text-color: #3f3f3f;
     --top-svg-color: #bebebee0 ;
@@ -32,16 +35,18 @@ body,html{
 }
 
 .nav-item{
-    transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s !important;
     border: 1px solid var(--secondary-color);
 }
 .nav-item:hover{
     /* font-weight: bold; */
+    cursor: pointer;
     color: var(--accent-color);
     border: 1px solid var(--accent-color);
 }
 .nav-item-active{
     /* font-weight: bold; */
+    background-color: var(--activenav);
     color: var(--accent-color);
     border: 1px solid var(--accent-color);
 }

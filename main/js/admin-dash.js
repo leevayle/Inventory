@@ -54,40 +54,63 @@ document.addEventListener('keydown', function(event) {
     }
   });
 
-function Collapse(){
-  const nav = document.getElementById('leftnav');
-  const currentStyle = getComputedStyle(nav);
-  if(currentStyle.display === "none"){
-    
-    
-  } else{
-    document.getElementById('leftnav').style.width = '6%';
+  function Collapse() {
+    const nav = document.getElementById('leftnav');
+    const currentStyle = getComputedStyle(nav);
+    if (currentStyle.display === "none") return;
+  
+    nav.style.width = '6%';
     document.getElementById('main').style.width = '94%';
+    document.querySelectorAll('.nav-name, .nav-item-last').forEach(element => {
+      element.style.display = 'none';
+      // element.style.float = 'left'; // Assuming you want left-aligned text
+    });
+    document.querySelectorAll('.nav-icon').forEach(element => {
+      element.style.margin = 'auto';
+      element.style.minWidth = '25px';
+      element.style.maxHeight = '25px';
+    });
+    document.querySelectorAll('.nav-item').forEach(element => {
+      element.style.width = '40%';
+      element.style.minWidth = '40px';
+      element.style.paddingRight = '0px';
+      element.style.display = 'flex';
+    });
   }
-}
-
-function Restore(){
-  const nav = document.getElementById('leftnav');
-  const currentStyle = getComputedStyle(nav);
-  if(currentStyle.display === "none"){
-    
-    
-    
-  } else{
-    document.getElementById('leftnav').style.width = '14%';
+  
+  function Restore() {
+    const nav = document.getElementById('leftnav');
+    const currentStyle = getComputedStyle(nav);
+    if (currentStyle.display === "none") return;
+  
+    nav.style.width = '14%';
     document.getElementById('main').style.width = '86%';
+    document.querySelectorAll('.nav-name, .nav-item-last').forEach(element => {
+      element.style.display = 'block';
+      element.style.marginLeft = '7px';
+      element.style.float = 'left';
+    });
+    document.querySelectorAll('.nav-icon').forEach(element => {
+      element.style.minWidth = '25px';
+      element.style.maxHeight = '25px';
+      element.style.marginLeft = '10px';
+    });
+    document.querySelectorAll('.nav-item').forEach(element => {
+      element.style.width = '90%';
+      element.style.paddingRight = '2px';
+      element.style.display = 'flex';
+    });
   }
-}
-
-function CollapseRestore(){
-    var widthstatus = document.getElementById('leftnav').style.width;
-
-   if (widthstatus === '14%' || widthstatus === 'auto' || widthstatus === '') {
-    Collapse();
-  } else {
-    Restore();
+  
+  function CollapseRestore() {
+    const isCollapsed = document.getElementById('leftnav').style.width === '6%';
+    if (isCollapsed) {
+      Restore();
+    } else {
+      Collapse();
+    }
   }
-}
+  
 
 function ShowLogout(){
     

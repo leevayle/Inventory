@@ -1,9 +1,12 @@
-
+*{
+    transition: all ease-in 0.2s;
+}
 :root {
     --primary-color: #ffffff;
     --secondary-color: #292929;
     --accent-color: #5065F6;
     --scrollbar-thumb: #5066f68c;
+    --activenav:#002f5552;
     --background-color: #1E1E1E;
     --text-color: #a8a8a8;
     --top-svg-color: #686868 ;
@@ -33,11 +36,13 @@ body,html{
 }
 .nav-item:hover{
     /* font-weight: bold; */
+    cursor: pointer;
     color: var(--accent-color);
     border: 1px solid var(--accent-color);
 }
 .nav-item-active{
     /* font-weight: bold; */
+    background-color: var(--activenav);
     color: var(--accent-color);
     border: 1px solid var(--accent-color);
 }
