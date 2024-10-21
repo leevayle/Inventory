@@ -177,6 +177,9 @@ body,html{
     color: var(--accent-color);
     border-bottom: 1px solid var(--top-svg-color);
 }
+.notification-cont{
+    border-bottom: 1px solid var(--activenav);
+}
 
 .tile{
     background-color: var(--secondary-color);
